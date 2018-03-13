@@ -1,3 +1,15 @@
+//头部购物车效果
+{
+    let car=document.querySelector(".head_car");
+    let box=document.querySelector(".head_car_carbox");
+    let bigbox=document.querySelector(".headcarbox");
+    car.onmouseenter=function () {
+        box.style.display="block";
+    };
+    bigbox.onmouseleave=function () {
+        box.style.display="none";
+    };
+}
 //banner效果
 {
     let banimg=document.querySelectorAll(".banner_img li");
@@ -95,7 +107,6 @@
     function fn(a) {
         let text=a.querySelectorAll(".dapeiright_wenzi");
         let box=a.querySelectorAll(".three_bottom_right");
-        console.log(text,box);
         text.forEach(function (ele,index) {
             ele.onmouseenter=function () {
                 for(i=0;i<text.length;i++){
@@ -144,51 +155,86 @@
     }
 }
 //内容效果
-// {
-//     function gn(b) {
-//         let nei_dian=b.querySelectorAll(".neironghuan1");
-//         let nei_box=b.querySelectorAll(".neirong_neirong");
-//         console.log(nei_dian,nei_box);
-//         //let nei_prev=b.querySelector(".neirong_jiantou1");
-//        // let nei_next=b.querySelector(".neirong_jiantou2");
-//         nei_dian.forEach(function (ele,index) {
-//             ele.onclick=function () {
-//                 for(i=0;i<nei_dian.length;i++){
-//                     nei_dian[i].classList.remove("neironghuan");
-//                     nei_box[i].classList.remove("neirong_prevnext");
-//                 }
-//                 this.classList.add("neironghuan");
-//                 nei_box[index].classList.add("neirong_prevnext");
-//                // n=index;
-//             }
-//         });
-//         // let n=0;
-//         // function move() {
-//         //     n++;
-//         //     if(n===nei_dian.length){
-//         //         n=0
-//         //     }
-//         //     if(n<0){
-//         //         n=nei_dian.length-1;
-//         //     }
-//         //     for(i=0;i<nei_dian.length;i++){
-//         //         nei_dian[i].classList.remove("neironghuan");
-//         //         nei_box[i].classList.remove("neirong_prevnext");
-//         //     }
-//         //     nei_dian[n].classList.add("neironghuan");
-//         //     nei_box[n].classList.add("neirong_prevnext");
-//         // }
-//         // nei_prev.onclick(function () {
-//         //     n-=2;
-//         //     move();
-//         // });
-//         // nei_next.onclick(function () {
-//         //    move();
-//         // })
-//     //}
-//     let nei_huan=document.querySelectorAll("neirong_btn");
-//     nei_huan.forEach(function (ele) {
-//         gn(ele);
-//     })
-//
-// }
+{
+    function bn(c) {
+        let prev=c.querySelector(".neirong_jiantou1");
+        let next=c.querySelector(".neirong_jiantou2");
+        let imgs=c.querySelector(".neirong_changhuan");
+        let dian=c.querySelectorAll(".neironghuan1");
+        let n=0;
+        next.onclick=function () {
+            n++;
+            if(n===dian.length){
+                n=dian.length-1;
+                return;
+            }
+            imgs.style.marginLeft=-296*n+"px";
+            dian[n-1].classList.remove("neironghuan");
+            dian[n].classList.add("neironghuan");
+            obj=dian[n];
+        };
+        prev.onclick=function () {
+            n--;
+            if(n<0){
+                n=0;
+                return;
+            }
+            imgs.style.marginLeft=-296*n+"px";
+            dian[n+1].classList.remove("neironghuan");
+            dian[n].classList.add("neironghuan");
+            obj=dian[n];
+        };
+        let obj=dian[0];
+        dian.forEach(function (ele,index) {
+            ele.onclick=function () {
+                obj.classList.remove("neironghuan");
+                dian[index].classList.add("neironghuan");
+                imgs.style.marginLeft=-296*index+"px";
+                obj=dian[index];
+                n=index;
+            }
+        })
+    }
+    let feng=document.querySelectorAll(".neirong_btn")
+    feng.forEach(function (ele) {
+        bn(ele);
+    })
+}
+//banner导航的效果
+{
+    let nav=document.querySelectorAll(".banner_nav_li");
+    let con=document.querySelectorAll(".banner_nav_menu");
+    let obj=con[0];
+    nav.forEach(function (ele,index) {
+        ele.onmouseenter=function () {
+            obj.style.display="none";
+            con[index].style.display="block";
+            obj=con[index];
+        };
+        ele.onmouseleave=function () {
+            con[index].style.display="none"
+        }
+    })
+}
+//导航效果
+{
+    let text=document.querySelectorAll(".daohang_wenzi_box");
+    let box=document.querySelectorAll(".daohang_wenzi_box_longbox");
+    let obj=box[0];
+    text.onmouseenter=function () {
+        box.style.height="233px";
+    };
+    box.onmouseleave=function () {
+        box.style.height="0" ;
+    };
+    text.forEach(function (ele,index) {
+        ele.onmouseenter=function () {
+            obj.style.display="none";
+            box[index].style.display="block";
+            obj=box[index];
+        };
+        ele.onmouseleave=function () {
+            box[index].style.display="none";
+        };
+    })
+}

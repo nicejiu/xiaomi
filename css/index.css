@@ -35,6 +35,9 @@
 .head_right{
 	float: right;
 }
+.headcarbox{
+	float: left;
+}
 .head_car{
 	width: 120px;
 	height: 40px;
@@ -55,6 +58,33 @@
 	line-height: 40px;
 	display: inline-block;
 }
+.head_car_carbox{
+	width: 318px;
+	height: 100px;
+	background-color: #fff;
+	position: absolute;
+	top: 40px;
+	right: 61px;
+	text-align: center;
+	line-height: 100px;
+	font-size: 12px;
+	color: #535353;
+	box-shadow: 1px 5px 20px 1px #C2C2C2;
+	display: none;
+}
+.head_wenzi:hover{
+	color: #fff;
+}
+.headcarbox:hover .head_car{
+	background-color: #fff;
+	cursor: pointer;
+}
+.headcarbox:hover .head_car span{
+	color: #ff6700;
+}
+.headcarbox:hover .head_car h1{
+	color: #ff6700;
+}
 .daohang{
 	width: 1226px;
 	height: 100px;
@@ -62,6 +92,113 @@
 }
 .daohang_wenzi a{
 	color:#333; 
+}
+.nav_logo{
+	width: 55px;
+	height: 55px;
+	background-color: #FF5801;
+	float: left;
+	margin-top: 22px;
+}
+.daohang_wenzi{
+	float: left ;
+	margin-left: 189px;
+	color: #333;
+	font-size: 15px;
+}
+.daohang_wenzi_box{
+	float: left ;
+}
+.daohang_wenzi_box span{
+	line-height: 100px;
+	padding: 0 10px;
+	cursor: pointer;
+}
+.daohang_wenzi span{
+	line-height: 100px;
+	float: left ;
+	padding: 0 10px;
+	cursor: pointer;
+}
+.daohang_wenzi_box_longbox{
+	width: 100%;
+	height: 233px;
+	background-color: #fff;
+	border-top: 1px solid #DEDEDE;
+	position: absolute;
+	top: 140px;
+	left: 0;
+	z-index: 99;
+	display: none;
+	padding-left: 63px;
+    transition: all 1s;
+    box-shadow: 0 5px 5px 2px rgba(0, 0, 0, 0.3);
+}
+.daohang_wenzi_box_longbox_box{
+	width: 204px;
+	height: 100%;
+	float: left;
+    text-align: center;
+	//background-color: #e53935;
+}
+.daohang_wenzi_box_longbox_line{
+	width: 1px;
+	height: 100px;
+	background-color: #E6E2DB;
+	margin-top: 35px;
+	float: left;
+}
+.daohang_wenzi_box_longbox_img{
+    width: 160px;
+    height: 110px;
+    margin-left: 22px;
+    margin-top: 34px;
+}
+.daohang_wenzi_box_longbox_img img{
+    width: 100%;
+    height: 100%;
+}
+.daohang_wenzi_box_longbox_box h1{
+    font-size: 12px;
+    color: #353A39;
+    font-weight: normal;
+    margin-top: 15px;
+}
+.daohang_wenzi_box_longbox_box h2{
+    font-size: 10px;
+    color: #FF4900;
+    font-weight: normal;
+    margin-top: 5px;
+}
+.sousuo{
+	width: 294px;
+	height: 48px;
+	float: right;
+	margin-top: 25px;
+}
+.sousuo_left{
+	width: 223px;
+	height: 52px;
+	padding-right: 15px;
+	outline:0;
+	border:1px solid #e0e0e0 ;
+	font-size: 12px;
+	float: left;
+}
+.sousuo_right{
+	width: 52px;
+	height: 50px;
+	font-family: 'iconfont';
+	font-size: 20px;
+	color: #62615B;
+	float: left;
+	outline:1px solid #e0e0e0;
+	border: 0;
+	background-color: transparent;
+}
+.sousuo_right:hover{
+	background-color: #FF5A01;
+	color: #fff;
 }
 .banner{
 	width: 1226px;
@@ -142,6 +279,7 @@
 .banner_nav li:hover{
 	background-color: #FF5801;
 }
+
 .banner_jiantou{
 	float: right;
 }
@@ -157,7 +295,7 @@
 	margin: auto;
 	cursor: pointer;
 	background-image: url("../image/icon-slides.png");
-	z-index: 10;
+	z-index: 6;
 }
 .banner_btn1{
 	left: 234px;
@@ -172,6 +310,47 @@
 }
 .banner_btn2:hover{
 	background-position: -42px 0;
+}
+.banner_nav_menu{
+	width: 795px;
+	height: 100%;
+	position: absolute;
+	left: 234px;
+	top: 0;
+	background-color: #fff;
+	z-index: 999;
+	display: none;
+    box-shadow: 5px 5px 10px 1px rgba(137, 137, 137, 0.3);
+}
+.banner_nav_menu1{
+    width: 992px;
+}
+.banner_nav_menu ul{
+	width: 248px;
+	height: 100%;
+	float: left;
+}
+.banner_nav_menu ul li{
+	width: 100%;
+	height: 76px;
+}
+.banner_nav_menu ul li img{
+	width: 40px;
+	height: 40px;
+	float: left;
+	margin-top: 18px;
+}
+.banner_nav_menu ul li span{
+	font-size: 14px;
+	color: #0A0A0C;
+	line-height: 76px;
+	margin-left: 15px;
+}
+.banner_nav_menu ul li:hover{
+    background-color: #fff;
+}
+.banner_nav_menu ul li span:hover{
+    color:#FF5801 ;
 }
 .xbanner{
 	width: 1226px;
@@ -223,56 +402,6 @@
 }
 .xbanner_wen{
 	margin-top: 4px;
-}
-
-.nav_logo{
-	width: 55px;
-	height: 55px;
-	background-color: #FF5801;
-	float: left;
-	margin-top: 22px;
-}
-.daohang_wenzi{
-	float: left ;
-	margin-left: 189px;
-	color: #333;
-	font-size: 15px;
-}
-.daohang_wenzi span{
-	line-height: 100px;
-	float: left ;
-	padding: 0 10px;
-	cursor: pointer;
-}
-.sousuo{
-	width: 294px;
-	height: 48px;
-	float: right;
-	margin-top: 25px;
-}
-.sousuo_left{
-	width: 223px;
-	height: 48px;
-	padding-right: 15px;
-	outline:1px solid #e0e0e0;
-	font-size: 12px;
-	float: left;
-	border-color: transparent;
-}
-.sousuo_right{
-	width: 52px;
-	height: 52px;
-	font-family: 'iconfont'; 
-	font-size: 20px;
-	color: #62615B;
-	float: right;
-	outline:1px solid #e0e0e0;
-	background-color: transparent;
-	border-color: transparent;
-}
-.sousuo_right:hover{
-	background-color: #FF5A01;
-	color: #fff;
 }
 .danpin{
 	width: 1226px;
@@ -636,7 +765,7 @@
 	height: 473px;
 	margin: 0 auto;
 }
-.reping_bottom{
+.reping_bottom,.neirong_bottom{
 	width: 100%;
 	height: 473px;
 }
@@ -779,8 +908,8 @@
 	margin: 0 0 0 14px;
 	background-color: #FFFFFF;
 	float: left;
-	border-top: 1px solid #FFA600;
 	position: relative;
+	border-top: 1px solid #FFA600;
 	overflow: hidden;
 	transition: transform .05s linear;
 }
@@ -788,21 +917,26 @@
 	width: 276px;
 	height: 360px;
 	background-color: #fff;
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 15px;
-	right: 15px;
 	text-align: center;
+	float: left;
+	margin-left: 15px;
 }
 .neirong_neirong img{
 	width: 216px;
 	height: 154px;
 	display: block;
-	position: absolute;
-	bottom: 0;
-	left: 30px;
+	margin-left: 30px;
 	cursor: pointer;
+}
+.neirong_changhuan{
+	width: 888px;
+	height: 281px;
+}
+.neirong_changhuan1{
+	width: 1184px;
+	height: 360px;
+	background-color: #fff;
+	z-index: 999;
 }
 .neirong_btn1{
 	margin-left: 0;
@@ -868,6 +1002,7 @@
 	transition:all 1s linear;
 	opacity: 0;
 	z-index: 9;
+	user-select: none;
 }
 .neirong_jiantou1{
 	font-size: 20px;
@@ -885,13 +1020,14 @@
 	transition:all 1s linear;
 	opacity: 0;
 	z-index: 9;
+	user-select: none;
 }
 .neirong_btn:hover .neirong_jiantou1{
 	left: 0;
 	opacity: 1;
 }
 .neirong_btn:hover .neirong_jiantou2{
-	right: 0px;
+	right: 0;
 	opacity: 1;
 }
 .neirong_jiantou1:hover{
@@ -900,7 +1036,6 @@
 .neirong_jiantou2:hover{
 	background-color: #8F877D;
 }
-
 .shipin_btn{
 	width: 296px;
 	height: 285px;
@@ -1170,19 +1305,7 @@
 	font-weight: 200;
 }
 
-.head_wenzi:hover{
-	color: #fff;
-}
-.head_car:hover{
-	background-color: #fff;
-	cursor: pointer;
-}
-.head_car:hover span{
-	color: #ff6700;
-}
-.head_car:hover h1{
-	color: #ff6700;
-}
+
 .daohang_wenzi span:hover{
 	color: #ff6700;
 }
